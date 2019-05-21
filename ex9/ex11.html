@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel ="stylesheet"
+type = "text/css"
+   href = "ex7.css" />
+<script>
+function buildTable() {
+        addLineToHTMLTable("Michel", "Buffa");
+        addLineToHTMLTable("Marie-Claire", "Forgue");
+        addLineToHTMLTable("Tim", "Berners-Lee");
+}
+
+function addLineToHTMLTable(firstName, lastName) {
+    
+    var tableBody = document.querySelector("#tableContactBody");
+  
+    var newRow   = tableBody.insertRow();
+
+   var firstNameCell  = newRow.insertCell();
+   firstNameCell.innerHTML = firstName;
+  
+   var lastNameCell   = newRow.insertCell();
+   lastNameCell.innerHTML = lastName;
+}
+</script>
+<title>JavaScript can change table content on the fly</title>
+</head>
+<body>
+  <h2>Contact list</h2>
+  <button onclick="buildTable();">Click to build the table!</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Given name</th>
+        <th>Family name</th>
+      </tr>
+    </thead>
+    <tbody id="tableContactBody">
+    </tbody>
+  </table>
+    <footer>W3Cx JavaScript intro MOOC</footer>
+</body>
+</html>
